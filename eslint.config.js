@@ -1,10 +1,117 @@
 // https://docs.expo.dev/guides/using-eslint/
 const { defineConfig } = require('eslint/config');
 const expoConfig = require('eslint-config-expo/flat');
+const eslintConfigPrettier = require('eslint-config-prettier');
+const unicornPlugin = require('eslint-plugin-unicorn').default;
+
+/** Doris-aligned unicorn overrides (React / React Native friendly). */
+const unicornRules = {
+  'no-nested-ternary': 'error',
+  // eslint-config-expo + unicorn merge leaves this rule undefined at severity "error".
+  'unicorn/logical-assignment-operators': 'off',
+  'unicorn/filename-case': [
+    'error',
+    {
+      cases: {
+        camelCase: true,
+        pascalCase: true,
+        kebabCase: true,
+      },
+      ignore: [/^__\w+_$/],
+    },
+  ],
+  'unicorn/no-abusive-eslint-disable': 'off',
+  'unicorn/no-array-callback-reference': 'off',
+  'unicorn/no-for-each': 'off',
+  'unicorn/no-array-reduce': 'off',
+  'unicorn/no-nested-ternary': 'off',
+  'unicorn/no-null': 'off',
+  'unicorn/no-useless-promise-resolve-reject': 'error',
+  'unicorn/no-useless-undefined': ['error', { checkArguments: false }],
+  'unicorn/numeric-separators-style': 'error',
+  'unicorn/prefer-set-has': 'off',
+  'unicorn/prefer-simple-condition-first': 'off',
+  'unicorn/no-this-outside-of-class': 'error',
+  'unicorn/consistent-compound-words': 'error',
+  'unicorn/prefer-split-limit': 'error',
+  'unicorn/prefer-includes-over-repeated-comparisons': 'error',
+  'unicorn/prefer-string-repeat': 'error',
+  'unicorn/prefer-array-some': 'error',
+  'unicorn/prefer-https': 'off',
+  'unicorn/prefer-module': 'off',
+  'unicorn/prefer-ternary': ['error', 'only-single-line'],
+  'unicorn/prefer-top-level-await': 'off',
+  'unicorn/name-replacements': [
+    'error',
+    {
+      replacements: {
+        ref: false,
+        refs: false,
+        props: false,
+        prop: false,
+        param: false,
+        params: false,
+        var: false,
+        vars: false,
+        dev: false,
+        env: false,
+        util: false,
+        utils: false,
+        cfg: false,
+        ident: false,
+        repository: false,
+      },
+    },
+  ],
+  'unicorn/switch-case-braces': ['error', 'avoid'],
+  'unicorn/max-nested-calls': 'error',
+  'unicorn/no-useless-else': 'error',
+  'unicorn/prefer-early-return': 'error',
+  'unicorn/no-useless-template-literals': 'error',
+  'unicorn/prefer-global-number-constants': 'error',
+  'unicorn/prefer-unary-minus': 'error',
+  'unicorn/prefer-boolean-return': 'error',
+  'unicorn/no-unsafe-string-replacement': 'error',
+  'unicorn/no-return-array-push': 'error',
+  'unicorn/consistent-class-member-order': 'error',
+  'unicorn/prefer-url-href': 'error',
+  'unicorn/prefer-type-literal-last': 'error',
+  'unicorn/prefer-direct-iteration': 'error',
+  'unicorn/prefer-array-flat-map': 'error',
+  'unicorn/no-subtraction-comparison': 'error',
+  'unicorn/no-error-property-assignment': 'error',
+  'unicorn/no-array-sort': 'off',
+  'unicorn/no-top-level-side-effects': 'off',
+  'unicorn/prefer-unicode-code-point-escapes': 'off',
+  'unicorn/prefer-minimal-ternary': 'off',
+  'unicorn/no-unreadable-object-destructuring': 'off',
+  'unicorn/no-non-function-verb-prefix': 'off',
+  'unicorn/no-declarations-before-early-exit': 'off',
+  'unicorn/no-top-level-assignment-in-function': 'off',
+  'unicorn/default-export-style': 'off',
+  'unicorn/prefer-number-coercion': 'off',
+  'unicorn/no-computed-property-existence-check': 'off',
+  'unicorn/require-array-sort-compare': 'off',
+  'unicorn/prefer-iterator-to-array': 'off',
+  'unicorn/prefer-number-is-safe-integer': 'off',
+  'unicorn/prefer-promise-with-resolvers': 'off',
+  'unicorn/prefer-array-from-map': 'off',
+  'unicorn/no-unsafe-property-key': 'off',
+};
 
 module.exports = defineConfig([
   expoConfig,
+  eslintConfigPrettier,
+  unicornPlugin.configs['flat/recommended'],
   {
-    ignores: ['dist/*'],
+    ignores: ['dist/*', '**/.expo/**'],
+    rules: unicornRules,
+  },
+  {
+    files: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
+    rules: {
+      'unicorn/max-nested-calls': 'off',
+      'unicorn/numeric-separators-style': 'off',
+    },
   },
 ]);
