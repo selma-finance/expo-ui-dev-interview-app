@@ -118,8 +118,8 @@ const theme = createTheme({
 export type Theme = typeof theme
 export default theme
 
-export const darkTheme: Theme = {
+export const darkTheme = {
   ...theme,
   mode: ThemeMode.DARK,
   colors: { ...darkColorsSemantic },
-}
+} as unknown as Theme;

@@ -1,0 +1,56 @@
+{
+  "Commons": {
+    "Active": "Active",
+    "Continue": "Continue",
+    "ReadMore": "Read more",
+    "SwissBias": "Swiss bias"
+  },
+  "PortfolioCard": {
+    "CLASSIC": {
+      "Description": "Widely diversified ETF portfolio that invests in major global asset classes and markets. Original Selma portfolio.",
+      "Title": "Classic portfolio"
+    },
+    "INCOME": {
+      "Description": "A widely diversified ETF portfolio that invests across major global asset classes and markets designed to generate income. The ETFs included pay out regular dividends and interest instead of reinvesting them – aiming to provide a steady stream of income.",
+      "Title": "Income portfolio"
+    },
+    "SUSTAINABLE": {
+      "Description": "Widely diversified ETF portfolio that invests in major global asset classes and markets, selected based on ESG sustainability criteria.",
+      "Title": "Sustainable portfolio"
+    }
+  },
+  "PortfolioCustomisation": {
+    "Add": {
+      "SwissBias": {
+        "Modal": "Impact on portfolio allocation\nIncreases the share of Swiss companies to 50% of the overall equity share in your portfolio.\n\nImpact on diversification\nThe portfolio's diversification decreases with a higher allocation to Swiss funds, as it increases concentration risk in the Swiss market.\n\nWhen this strategy could be right for you\nIncreasing Swiss funds is ideal if you believe the Swiss stock market will outperform international markets or if you expect foreign currencies to weaken against the Swiss Franc."
+      }
+    },
+    "PortfolioSelection": {
+      "Disclaimer": "Your choices can affect the expected returns of your portfolio.",
+      "TopBar": {
+        "Title": "Portfolio selection"
+      }
+    },
+    "Preferences": {
+      "Description": "Selma offers optional preferences for personalising your investment experience. You can always change your preferences later on.",
+      "SwissBias": {
+        "Description": "Increases the share of Swiss companies up to 50% of the overall equity share in your portfolio."
+      },
+      "Title": "Preferences",
+      "TopBar": {
+        "Title": "Preferences"
+      }
+    }
+  },
+  "PortfolioDescription": {
+    "CLASSIC": {
+      "Description": "Widely diversified ETF portfolio that invests in major global asset classes and markets. Original Selma portfolio.\n\nStrategy & risk\nThis portfolio uses global market capitalisation to diversify investments across markets worldwide, providing a balanced and diversified portfolio. It's tailored to your specific needs based on your personal investor profile.\n\nWho is this portfolio for?\nBuilt for long-term investors who want to grow their wealth steadily over time through a balanced and comprehensive investment strategy."
+    },
+    "INCOME": {
+      "Description": "A widely diversified ETF portfolio that invests across major global asset classes and markets, designed to generate income. The ETFs include paying out regular dividends and interest instead of reinvesting them, aiming to provide a steady stream of income.\n\nStrategy & risk\nThis portfolio uses global market capitalisation to diversify investments across markets worldwide, providing a broadly diversified portfolio. It's tailored to your specific needs based on your personal investor profile.\n\nWho is this portfolio for?\nBecause of its focus on income generation rather than long-term capital growth, this portfolio is ideal for people who rely on their investments for regular income – such as retirees or those in early retirement."
+    },
+    "SUSTAINABLE": {
+      "Description": "Widely diversified ETF portfolio that invests in major global asset classes and markets, selected based on ESG sustainability criteria.\n\nStrategy & risk\nThis portfolio uses global market capitalisation to diversify investments across markets worldwide, providing a balanced and diversified portfolio. It's tailored to your specific needs based on your personal investor profile.\n\nWho is this portfolio for?\nIdeal for long-term investors who want to grow their wealth while supporting companies that meet strong Environmental, Social, and Governance standards."
+    }
+  }
+}

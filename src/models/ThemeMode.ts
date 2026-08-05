@@ -1,12 +1,6 @@
-export enum ThemeModeSelection {
-  LIGHT = "light",
-  DARK = "dark",
-  AUTO = "auto",
-}
+const ThemeMode = {
+  LIGHT: 'light',
+  DARK: 'dark',
+} as const;
 
-enum ThemeMode {
-  LIGHT = "light",
-  DARK = "dark",
-}
-
-export default ThemeMode
+export default ThemeMode;
