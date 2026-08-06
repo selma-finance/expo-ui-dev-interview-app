@@ -70,7 +70,6 @@ const PortfolioSelectionScreen: React.FC = () => {
           height={carouselHeight}
           hideBottomDots
           activeIndex={selectedIndex}
-          onIndexChange={setSelectedIndex}
           renderItem={(theme, index) => {
             const config = getPortfolioThemeDisplayConfig(theme);
             const isSelected = index === selectedIndex;
