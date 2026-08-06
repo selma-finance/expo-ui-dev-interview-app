@@ -9,6 +9,7 @@ import Carousel from "src/components/Carousel/Carousel";
 import type { PortfolioCustomisationStackParamList } from "src/navigation/portfolioCustomisationTypes";
 import { PortfolioCustomisationFlowContainer } from "src/screens/App/Portfolio/Customisation/PortfolioCustomisationFlowContainer";
 import {
+  DEFAULT_PORTFOLIO_THEME,
   getPortfolioThemeDisplayConfig,
   PORTFOLIO_TAB_ORDER,
 } from "src/screens/App/Portfolio/Customisation/ThemeSelection/portfolioThemeSelectionConstants";
@@ -51,6 +52,7 @@ const PortfolioSelectionScreen: React.FC = () => {
         renderItem={(theme, index) => {
           const config = getPortfolioThemeDisplayConfig(theme);
           const isSelected = index === selectedIndex;
+          const isInEffect = theme === DEFAULT_PORTFOLIO_THEME;
 
           return (
             <PortfolioSelectionCard
@@ -60,7 +62,7 @@ const PortfolioSelectionScreen: React.FC = () => {
               image={{ src: config.image }}
               backgroundColor={config.backgroundColor}
               isSelected={isSelected}
-              tag={isSelected ? t("Commons.Active") : undefined}
+              tag={isInEffect ? t("Commons.Active") : undefined}
               readMore={{
                 label: t("Commons.ReadMore"),
                 onPress: () => showReadMore(theme),
