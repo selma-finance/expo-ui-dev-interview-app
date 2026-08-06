@@ -1,9 +1,26 @@
 {
   "Commons": {
     "Active": "Active",
+    "Allocations": {
+      "Max": "max",
+      "New": "New",
+      "Old": "Old"
+    },
     "Continue": "Continue",
     "ReadMore": "Read more",
     "SwissBias": "Swiss bias"
+  },
+  "CustomerSupportCardSmall": {
+    "Description": "Our crew is happy to help you with any questions about your portfolio.",
+    "Link": "Contact customer support",
+    "Title": "Need some further support?"
+  },
+  "InvestmentPlan": {
+    "ListRowTitle": {
+      "Support": {
+        "Title": "Support"
+      }
+    }
   },
   "PortfolioCard": {
     "CLASSIC": {
@@ -25,11 +42,29 @@
         "Modal": "Impact on portfolio allocation\nIncreases the share of Swiss companies to 50% of the overall equity share in your portfolio.\n\nImpact on diversification\nThe portfolio's diversification decreases with a higher allocation to Swiss funds, as it increases concentration risk in the Swiss market.\n\nWhen this strategy could be right for you\nIncreasing Swiss funds is ideal if you believe the Swiss stock market will outperform international markets or if you expect foreign currencies to weaken against the Swiss Franc."
       }
     },
+    "Diversification": {
+      "Title": "Diversification"
+    },
+    "DiversificationLevel": {
+      "GOOD": "Good",
+      "GREAT": "Great"
+    },
     "PortfolioSelection": {
       "Disclaimer": "Your choices can affect the expected returns of your portfolio.",
       "TopBar": {
         "Title": "Portfolio selection"
       }
+    },
+    "PortfolioSummary": {
+      "AssetAllocationChangesTitle": "Allocation changes",
+      "CostsCard": {
+        "Description": "When you edit your portfolio, Selma will sell investment products from your portfolio and purchase new investments according to your new portfolio. Selma does not charge any additional fees for buying or selling investment products; however, indirect costs may apply, including the \"spread\" and exchange rate differences.",
+        "Title": "Costs"
+      },
+      "CTA": "Confirm portfolio",
+      "PageTitle": "Portfolio summary",
+      "SuccessDescription": "Your portfolio customisation has been saved.",
+      "SuccessMessage": "Your portfolio has been updated"
     },
     "Preferences": {
       "Description": "Selma offers optional preferences for personalising your investment experience. You can always change your preferences later on.",
@@ -40,6 +75,17 @@
       "TopBar": {
         "Title": "Preferences"
       }
+    },
+    "RiskLevel": {
+      "Header": {
+        "OPTION_1_STABILITY": "Stability",
+        "OPTION_2_CAUTIOUS_GROWTH": "Cautious growth",
+        "OPTION_3_WELL_BALANCED": "Well-balanced",
+        "OPTION_4_GROWTH": "Growth",
+        "OPTION_5_STRONG_GROWTH": "Strong growth",
+        "OPTION_6_FULL_GROWTH": "Full growth"
+      },
+      "Title": "Risk level"
     }
   },
   "PortfolioDescription": {
@@ -51,6 +97,27 @@
     },
     "SUSTAINABLE": {
       "Description": "Widely diversified ETF portfolio that invests in major global asset classes and markets, selected based on ESG sustainability criteria.\n\nStrategy & risk\nThis portfolio uses global market capitalisation to diversify investments across markets worldwide, providing a balanced and diversified portfolio. It's tailored to your specific needs based on your personal investor profile.\n\nWho is this portfolio for?\nIdeal for long-term investors who want to grow their wealth while supporting companies that meet strong Environmental, Social, and Governance standards."
+    }
+  },
+  "ThemeSelection": {
+    "StatsCard": {
+      "ListRowTitle": {
+        "Title": "Stats"
+      }
+    }
+  },
+  "Transactions": {
+    "PortfolioCategory": {
+      "cash": "Cash",
+      "commodities": "Commodities",
+      "corporate_bonds": "Company loans",
+      "crypto": "Crypto",
+      "equity": "International companies",
+      "government_bonds": "Government loans",
+      "precious_metals": "Precious metals",
+      "private_equity": "Private equity",
+      "real_estate": "Real estate",
+      "swiss_equity": "Swiss companies"
     }
   }
 }

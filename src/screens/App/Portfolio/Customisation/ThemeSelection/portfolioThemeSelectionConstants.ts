@@ -32,6 +32,13 @@ export const PORTFOLIO_THEME_DISPLAY_CONFIG: readonly PortfolioThemeDisplayConfi
 
 export const PORTFOLIO_TAB_ORDER: readonly BasePortfolioEnum[] = ['CLASSIC', 'SUSTAINABLE', 'INCOME'];
 
+export const DEFAULT_PORTFOLIO_THEME: BasePortfolioEnum = 'CLASSIC';
+
+export const hasPortfolioCustomisationChanges = (
+  theme: BasePortfolioEnum,
+  hasSwissBias: boolean,
+): boolean => theme !== DEFAULT_PORTFOLIO_THEME || hasSwissBias;
+
 export const getPortfolioThemeDisplayConfig = (theme: BasePortfolioEnum): PortfolioThemeDisplayConfig => {
   const config = PORTFOLIO_THEME_DISPLAY_CONFIG[PORTFOLIO_TAB_ORDER.indexOf(theme)];
   const defaultConfig = PORTFOLIO_THEME_DISPLAY_CONFIG[0];

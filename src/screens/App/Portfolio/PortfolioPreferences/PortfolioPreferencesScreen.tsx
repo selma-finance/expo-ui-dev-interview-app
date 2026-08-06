@@ -8,6 +8,9 @@ import Box from "src/components/Box";
 import { SelectorLarge } from "src/components/Selectors/SelectorLarge/SelectorLarge";
 import Text from "src/components/Text/Text";
 import type { PortfolioCustomisationStackParamList } from "src/navigation/portfolioCustomisationTypes";
+import {
+  hasPortfolioCustomisationChanges,
+} from "src/screens/App/Portfolio/Customisation/ThemeSelection/portfolioThemeSelectionConstants";
 import { PortfolioCustomisationFlowContainer } from "src/screens/App/Portfolio/Customisation/PortfolioCustomisationFlowContainer";
 
 const PortfolioPreferencesScreen: React.FC = () => {
@@ -18,7 +21,12 @@ const PortfolioPreferencesScreen: React.FC = () => {
     useRoute<
       RouteProp<PortfolioCustomisationStackParamList, "PortfolioPreferences">
     >();
-  const [swissBiasEnabled, setSwissBiasEnabled] = useState(true);
+  const [swissBiasEnabled, setSwissBiasEnabled] = useState(false);
+
+  const hasChanges = hasPortfolioCustomisationChanges(
+    route.params.theme,
+    swissBiasEnabled,
+  );
 
   const showReadMore = useCallback(() => {
     Alert.alert(
@@ -28,17 +36,20 @@ const PortfolioPreferencesScreen: React.FC = () => {
   }, [t]);
 
   const handleContinue = useCallback(() => {
-    Alert.alert(
-      "Portfolio summary",
-      `Theme: ${route.params.theme}\nSwiss bias: ${swissBiasEnabled ? "enabled" : "disabled"}`,
-    );
-  }, [route.params.theme, swissBiasEnabled]);
+    navigation.navigate("PortfolioSummary", {
+      theme: route.params.theme,
+      swissBias: swissBiasEnabled,
+    });
+  }, [navigation, route.params.theme, swissBiasEnabled]);
 
   return (
     <PortfolioCustomisationFlowContainer
       title={t("PortfolioCustomisation.Preferences.TopBar.Title")}
       disclaimer={t("PortfolioCustomisation.PortfolioSelection.Disclaimer")}
-      CTA={{ onPress: handleContinue }}
+      CTA={{
+        onPress: handleContinue,
+        disabled: !hasChanges,
+      }}
       onBackPress={() => navigation.goBack()}
     >
       <Box flex={1} paddingHorizontal="s" paddingTop="m" gap="m">

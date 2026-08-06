@@ -6,6 +6,7 @@ import React from "react";
 
 import PortfolioPreferencesScreen from "src/screens/App/Portfolio/PortfolioPreferences/PortfolioPreferencesScreen";
 import PortfolioSelectionScreen from "src/screens/App/Portfolio/PortfolioSelection/PortfolioSelectionScreen";
+import PortfolioSummaryScreen from "src/screens/App/Portfolio/PortfolioSummary/PortfolioSummaryScreen";
 
 import type { PortfolioCustomisationStackParamList } from "./portfolioCustomisationTypes";
 
@@ -26,6 +27,10 @@ export const PortfolioCustomisationNavigator: React.FC = () => {
       <Stack.Screen
         name="PortfolioPreferences"
         component={PortfolioPreferencesScreen}
+      />
+      <Stack.Screen
+        name="PortfolioSummary"
+        component={PortfolioSummaryScreen}
       />
     </Stack.Navigator>
   );
