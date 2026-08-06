@@ -134,8 +134,11 @@ function AnimatedCarousel<T>({
       overScrollMode={bounces ? 'always' : 'never'}
       onMomentumScrollEnd={handleMomentumScrollEnd}
       contentOffset={{ x: getScrollXForIndex(defaultIndex), y: 0 }}
-      style={{ width: '100%', height }}
-      contentContainerStyle={padItems && data.length > 1 ? { paddingRight: itemPaddingLeft } : undefined}
+      style={{ width: '100%', height, flexGrow: 0, flexShrink: 0 }}
+      contentContainerStyle={{
+        alignItems: 'flex-start',
+        ...(padItems && data.length > 1 ? { paddingRight: itemPaddingLeft } : undefined),
+      }}
     >
       {data.map((item, index) => {
         return (

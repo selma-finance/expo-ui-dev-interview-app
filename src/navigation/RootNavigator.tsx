@@ -1,13 +1,20 @@
-import { DarkTheme, DefaultTheme, NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator, StackNavigationOptions } from '@react-navigation/stack';
-import { ThemeProvider } from '@shopify/restyle';
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { useColorScheme } from 'react-native';
+import {
+    DarkTheme,
+    DefaultTheme,
+    NavigationContainer,
+} from "@react-navigation/native";
+import {
+    createStackNavigator,
+    StackNavigationOptions,
+} from "@react-navigation/stack";
+import { ThemeProvider } from "@shopify/restyle";
+import { StatusBar } from "expo-status-bar";
+import React from "react";
+import { useColorScheme } from "react-native";
 
-import theme, { darkTheme } from 'src/styling/restyle/defaultTheme';
+import theme, { darkTheme } from "src/styling/restyle/defaultTheme";
 
-import { MainNavigator } from './MainNavigator';
+import { MainNavigator } from "./MainNavigator";
 
 type RootStackParamList = {
   Main: undefined;
@@ -22,7 +29,7 @@ const navigationOptions: StackNavigationOptions = {
 
 export const RootNavigator: React.FC = () => {
   const colorScheme = useColorScheme();
-  const isDark = colorScheme === 'dark';
+  const isDark = colorScheme === "dark";
 
   return (
     <ThemeProvider theme={isDark ? darkTheme : theme}>

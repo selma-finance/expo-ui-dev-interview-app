@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import { PortfolioCustomisationNavigator } from 'src/navigation/PortfolioCustomisationNavigator';
+import { PortfolioCustomisationNavigator } from "src/navigation/PortfolioCustomisationNavigator";
 
 const HomeScreen: React.FC = () => {
   return <PortfolioCustomisationNavigator />;

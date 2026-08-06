@@ -1,15 +1,17 @@
-import { ParamListBase, useNavigation } from '@react-navigation/native';
-import { StackNavigationProp } from '@react-navigation/stack';
-import React, { ReactElement } from 'react';
+import { ParamListBase, useNavigation } from "@react-navigation/native";
+import { StackNavigationProp } from "@react-navigation/stack";
+import React, { ReactElement } from "react";
 
-import Box from './Box';
-import PressableButton from './Button/PressableButton';
-import CardHeaderButton from 'src/components/Card/CardHeaderButton';
-import Icon from './Icon';
-import Text from './Text/Text';
-import { Colors } from 'src/models/Colors';
+import CardHeaderButton from "src/components/Card/CardHeaderButton";
+import { Colors } from "src/models/Colors";
+import Box from "./Box";
+import PressableButton from "./Button/PressableButton";
+import Icon from "./Icon";
+import Text from "./Text/Text";
 
-export interface ScreenHeaderTitleProps extends React.ComponentProps<typeof Box> {
+export interface ScreenHeaderTitleProps extends React.ComponentProps<
+  typeof Box
+> {
   backBtnLabel?: string;
   isShownBackBtn?: boolean;
   label?: string;
@@ -50,6 +52,7 @@ const ScreenHeaderTitle: React.FC<ScreenHeaderTitleProps> = ({
 
   return (
     <Box
+      flex={1}
       flexDirection="row"
       alignItems="center"
       justifyContent="space-between"
@@ -67,8 +70,16 @@ const ScreenHeaderTitle: React.FC<ScreenHeaderTitleProps> = ({
               hitSlop={20}
               accessibilityRole="button"
             >
-              <Box flexDirection="row" justifyContent="center" alignItems="center">
-                <Icon name="chevron-back-outline" color="textPrimary" size="medium" />
+              <Box
+                flexDirection="row"
+                justifyContent="center"
+                alignItems="center"
+              >
+                <Icon
+                  name="chevron-back-outline"
+                  color="textPrimary"
+                  size="medium"
+                />
                 {backBtnLabel && (
                   <Text variant="tertiary" color="textPrimary" fontWeight="600">
                     {backBtnLabel}
@@ -84,7 +95,7 @@ const ScreenHeaderTitle: React.FC<ScreenHeaderTitleProps> = ({
             <Text
               testID="nav-title-label"
               variant="secondary"
-              color={labelColor ?? 'textPrimary'}
+              color={labelColor ?? "textPrimary"}
               fontWeight="bold"
               textAlign="center"
             >
@@ -95,7 +106,11 @@ const ScreenHeaderTitle: React.FC<ScreenHeaderTitleProps> = ({
         <Box flex={1} flexDirection="row" justifyContent="flex-end">
           {rightAction}
           {!rightAction && showCloseButton && (
-            <CardHeaderButton key="close" testID="nav-close-button" onPress={onClosePress}>
+            <CardHeaderButton
+              key="close"
+              testID="nav-close-button"
+              onPress={onClosePress}
+            >
               <Icon name="close" color="textPrimary" size="medium" />
             </CardHeaderButton>
           )}

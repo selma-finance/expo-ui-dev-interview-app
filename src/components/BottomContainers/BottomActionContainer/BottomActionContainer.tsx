@@ -1,15 +1,17 @@
-import React from 'react';
+import React from "react";
 
-import Box from 'src/components/Box';
-import Button, { ButtonProps } from 'src/components/Button/Button';
+import Box from "src/components/Box";
+import Button, { ButtonProps } from "src/components/Button/Button";
 
 interface BottomActionContainerProps {
-  cta: ButtonProps & { variant?: 'primary' };
+  cta: ButtonProps & { variant?: "primary" };
 }
 
-const BottomActionContainer: React.FC<BottomActionContainerProps> = ({ cta }) => {
+const BottomActionContainer: React.FC<BottomActionContainerProps> = ({
+  cta,
+}) => {
   return (
-    <Box paddingHorizontal="s" paddingVertical="xs">
+    <Box paddingHorizontal="s">
       <Button
         flex={1}
         variant="primary"
