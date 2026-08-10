@@ -1,11 +1,13 @@
-import { createTheme } from "@shopify/restyle"
+import { createTheme } from '@shopify/restyle';
 
-import { darkColorsSemantic, lightColorsSemantic } from "../../../design-language/src/figmaColors"
-import ThemeMode from "src/models/ThemeMode"
-import borderWidth from "../borderWidth"
-import { fontFamily, fontSize } from "../font"
-import radius from "../radius"
-import spacing from "../spacing"
+import loadingSpinnerImage from 'assets/images/loading-spinner.png';
+import customerSupportImage from 'assets/images/customer-support.png';
+import { darkColorsSemantic, lightColorsSemantic } from '../../../design-language/src/figmaColors';
+import ThemeMode from 'src/models/ThemeMode';
+import borderWidth from '../borderWidth';
+import { fontFamily, fontSize } from '../font';
+import radius from '../radius';
+import spacing from '../spacing';
 
 const theme = createTheme({
   colors: { ...lightColorsSemantic },
@@ -40,26 +42,26 @@ const theme = createTheme({
   },
   buttonVariants: {
     defaults: {
-      paddingHorizontal: "s",
+      paddingHorizontal: 's',
       // minHeight (not height) so long labels can wrap to a second line
       minHeight: 48,
-      flexDirection: "row",
-      justifyContent: "center",
-      alignItems: "center",
-      borderRadius: "l",
+      flexDirection: 'row',
+      justifyContent: 'center',
+      alignItems: 'center',
+      borderRadius: 'l',
     },
     primary: {
-      backgroundColor: "backgroundButtonActive",
+      backgroundColor: 'backgroundButtonActive',
     },
     primaryDisabled: {
-      backgroundColor: "backgroundButtonDisabled",
+      backgroundColor: 'backgroundButtonDisabled',
     },
     secondary: {
-      borderColor: "borderActive",
+      borderColor: 'borderActive',
       borderWidth: borderWidth.m,
     },
     secondaryDisabled: {
-      borderColor: "borderDisabled",
+      borderColor: 'borderDisabled',
       borderWidth: borderWidth.m,
     },
     link: {
@@ -67,10 +69,10 @@ const theme = createTheme({
       paddingVertical: 0,
     },
     attention: {
-      backgroundColor: "backgroundButtonAttention",
+      backgroundColor: 'backgroundButtonAttention',
     },
     alert: {
-      backgroundColor: "backgroundAlert",
+      backgroundColor: 'backgroundAlert',
     },
   },
   textVariants: {
@@ -113,13 +115,17 @@ const theme = createTheme({
       lineHeight: 16,
     },
   },
-})
+  images: {
+    loadingSpinner: loadingSpinnerImage,
+    customerSupport: customerSupportImage,
+  },
+});
 
-export type Theme = typeof theme
-export default theme
+export type Theme = typeof theme;
+export default theme;
 
-export const darkTheme: Theme = {
+export const darkTheme = {
   ...theme,
   mode: ThemeMode.DARK,
   colors: { ...darkColorsSemantic },
-}
+} as unknown as Theme;

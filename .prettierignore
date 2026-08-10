@@ -1,0 +1,9 @@
+.yarn
+node_modules
+.expo
+dist
+coverage
+*.lock
+package-lock.json
+assets
+design-language

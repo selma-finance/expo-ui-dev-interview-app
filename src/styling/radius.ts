@@ -6,4 +6,4 @@ export default {
   l: 12,
   xl: 16,
   round: 60,
-}
+};
