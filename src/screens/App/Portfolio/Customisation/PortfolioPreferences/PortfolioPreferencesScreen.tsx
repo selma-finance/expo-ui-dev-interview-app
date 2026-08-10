@@ -8,10 +8,8 @@ import Box from "src/components/Box";
 import { SelectorLarge } from "src/components/Selectors/SelectorLarge/SelectorLarge";
 import Text from "src/components/Text/Text";
 import type { PortfolioCustomisationStackParamList } from "src/navigation/portfolioCustomisationTypes";
-import {
-  hasPortfolioCustomisationChanges,
-} from "src/screens/App/Portfolio/Customisation/ThemeSelection/portfolioThemeSelectionConstants";
 import { PortfolioCustomisationFlowContainer } from "src/screens/App/Portfolio/Customisation/PortfolioCustomisationFlowContainer";
+import { hasPortfolioCustomisationChanges } from "src/screens/App/Portfolio/Customisation/portfolioCustomisationConstants";
 
 const PortfolioPreferencesScreen: React.FC = () => {
   const { t } = useTranslation();

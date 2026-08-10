@@ -4,9 +4,9 @@ import {
 } from "@react-navigation/stack";
 import React from "react";
 
-import PortfolioPreferencesScreen from "src/screens/App/Portfolio/PortfolioPreferences/PortfolioPreferencesScreen";
-import PortfolioSelectionScreen from "src/screens/App/Portfolio/PortfolioSelection/PortfolioSelectionScreen";
-import PortfolioSummaryScreen from "src/screens/App/Portfolio/PortfolioSummary/PortfolioSummaryScreen";
+import PortfolioPreferencesScreen from "src/screens/App/Portfolio/Customisation/PortfolioPreferences/PortfolioPreferencesScreen";
+import PortfolioSelectionScreen from "src/screens/App/Portfolio/Customisation/PortfolioSelection/PortfolioSelectionScreen";
+import PortfolioSummaryScreen from "src/screens/App/Portfolio/Customisation/PortfolioSummary/PortfolioSummaryScreen";
 
 import type { PortfolioCustomisationStackParamList } from "./portfolioCustomisationTypes";
 

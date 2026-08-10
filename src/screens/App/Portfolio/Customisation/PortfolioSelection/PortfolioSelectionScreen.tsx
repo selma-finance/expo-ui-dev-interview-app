@@ -12,7 +12,7 @@ import {
   DEFAULT_PORTFOLIO_THEME,
   getPortfolioThemeDisplayConfig,
   PORTFOLIO_TAB_ORDER,
-} from "src/screens/App/Portfolio/Customisation/ThemeSelection/portfolioThemeSelectionConstants";
+} from "src/screens/App/Portfolio/Customisation/portfolioCustomisationConstants";
 import type { BasePortfolioEnum } from "src/types/schemaTypes";
 
 const CAROUSEL_HEIGHT = 368;

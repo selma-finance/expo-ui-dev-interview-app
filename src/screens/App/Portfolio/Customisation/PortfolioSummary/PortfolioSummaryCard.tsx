@@ -16,12 +16,12 @@ import { useRiskScoreLevelData } from 'src/models/RiskMetrics/useRiskScoreLevelD
 import { Theme } from 'src/styling/restyle/defaultTheme';
 import { BasePortfolioEnum } from 'src/types/schemaTypes';
 
-interface PortfolioSummaryThemeCardProps {
+interface PortfolioSummaryCardProps {
   basePortfolio: BasePortfolioEnum;
   swissBias: boolean;
 }
 
-const PortfolioSummaryThemeCard: React.FC<PortfolioSummaryThemeCardProps> = ({
+const PortfolioSummaryCard: React.FC<PortfolioSummaryCardProps> = ({
   basePortfolio,
   swissBias,
 }) => {
@@ -101,4 +101,4 @@ const PortfolioSummaryThemeCard: React.FC<PortfolioSummaryThemeCardProps> = ({
   );
 };
 
-export default PortfolioSummaryThemeCard;
+export default PortfolioSummaryCard;

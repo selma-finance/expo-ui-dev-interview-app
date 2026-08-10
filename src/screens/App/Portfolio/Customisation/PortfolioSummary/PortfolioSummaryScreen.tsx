@@ -11,7 +11,7 @@ import ListRowTitle from 'src/components/Menu/ListRowTitle';
 import { getAllocationChanges } from 'src/models/InvestmentAllocation/getAllocationChanges';
 import type { PortfolioCustomisationStackParamList } from 'src/navigation/portfolioCustomisationTypes';
 import { PortfolioCustomisationFlowContainer } from 'src/screens/App/Portfolio/Customisation/PortfolioCustomisationFlowContainer';
-import PortfolioSummaryThemeCard from 'src/screens/App/Portfolio/PortfolioSummary/PortfolioSummaryThemeCard';
+import PortfolioSummaryCard from 'src/screens/App/Portfolio/Customisation/PortfolioSummary/PortfolioSummaryCard';
 import CostsCardSummary from 'src/screens/shared/PortfolioCards/CostsCardSummary';
 import { PortfolioPreferencesCard } from 'src/screens/shared/PortfolioCards/PortfolioPreferencesCard';
 
@@ -47,7 +47,7 @@ const PortfolioSummaryScreen: React.FC = () => {
     >
       <ScrollView alwaysBounceVertical={false}>
         <Box paddingHorizontal="s" gap="s" marginTop="s" marginBottom="s">
-          <PortfolioSummaryThemeCard basePortfolio={theme} swissBias={swissBias} />
+          <PortfolioSummaryCard basePortfolio={theme} swissBias={swissBias} />
 
           <PortfolioPreferencesCard isSwissBias={swissBias} />
 
