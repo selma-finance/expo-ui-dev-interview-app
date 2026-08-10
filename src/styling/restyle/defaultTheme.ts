@@ -1,5 +1,7 @@
 import { createTheme } from "@shopify/restyle"
 
+import loadingSpinnerImage from "assets/images/loading-spinner.png"
+import customerSupportImage from "assets/images/customer-support.png"
 import { darkColorsSemantic, lightColorsSemantic } from "../../../design-language/src/figmaColors"
 import ThemeMode from "src/models/ThemeMode"
 import borderWidth from "../borderWidth"
@@ -112,6 +114,10 @@ const theme = createTheme({
       fontFamily: fontFamily.fontRegular,
       lineHeight: 16,
     },
+  },
+  images: {
+    loadingSpinner: loadingSpinnerImage,
+    customerSupport: customerSupportImage,
   },
 })
 

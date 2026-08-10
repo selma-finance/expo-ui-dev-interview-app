@@ -189,6 +189,11 @@ export const getAllocationChanges = ({
 }: AllocationChangesParams): AllocationChangeCategoryProps[] =>
   buildChanges(getNewAllocations(theme, swissBias), t);
 
+export const getSimulatedAllocations = (
+  theme: BasePortfolioEnum,
+  hasSwissBias: boolean,
+): AllocationEntry[] => getNewAllocations(theme, hasSwissBias);
+
 export const getPortfolioSummaryStats = (
   theme: BasePortfolioEnum,
   hasSwissBias: boolean,

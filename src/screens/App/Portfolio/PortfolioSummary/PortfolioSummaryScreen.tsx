@@ -5,18 +5,15 @@ import { useTranslation } from 'react-i18next';
 import { Alert, ScrollView } from 'react-native';
 
 import AllocationChangeCard from 'src/components/Cards/AllocationChangeCard/AllocationChangeCard';
-import CustomerSupportCardSmall from 'src/components/Cards/CustomerSupportCardSmall/CustomerSupportCardSmall';
+import CustomerSupportCard from 'src/components/CustomerSupportCard/CustomerSupportCard';
 import Box from 'src/components/Box';
 import ListRowTitle from 'src/components/Menu/ListRowTitle';
-import {
-  getAllocationChanges,
-  getPortfolioSummaryStats,
-} from 'src/models/InvestmentAllocation/getAllocationChanges';
+import { getAllocationChanges } from 'src/models/InvestmentAllocation/getAllocationChanges';
 import type { PortfolioCustomisationStackParamList } from 'src/navigation/portfolioCustomisationTypes';
 import { PortfolioCustomisationFlowContainer } from 'src/screens/App/Portfolio/Customisation/PortfolioCustomisationFlowContainer';
 import PortfolioSummaryThemeCard from 'src/screens/App/Portfolio/PortfolioSummary/PortfolioSummaryThemeCard';
 import CostsCardSummary from 'src/screens/shared/PortfolioCards/CostsCardSummary';
-import PortfolioStatsCard from 'src/screens/shared/PortfolioCards/PortfolioStatsCard';
+import { PortfolioPreferencesCard } from 'src/screens/shared/PortfolioCards/PortfolioPreferencesCard';
 
 const PortfolioSummaryScreen: React.FC = () => {
   const { t } = useTranslation();
@@ -30,11 +27,6 @@ const PortfolioSummaryScreen: React.FC = () => {
   const allocationChanges = useMemo(
     () => getAllocationChanges({ theme, swissBias, t }),
     [theme, swissBias, t],
-  );
-
-  const stats = useMemo(
-    () => getPortfolioSummaryStats(theme, swissBias),
-    [theme, swissBias],
   );
 
   const handleConfirm = useCallback(() => {
@@ -57,16 +49,7 @@ const PortfolioSummaryScreen: React.FC = () => {
         <Box paddingHorizontal="s" gap="s" marginTop="s" marginBottom="s">
           <PortfolioSummaryThemeCard basePortfolio={theme} swissBias={swissBias} />
 
-          <Box>
-            <ListRowTitle title={t('ThemeSelection.StatsCard.ListRowTitle.Title')} />
-            <PortfolioStatsCard
-              diversificationLevel={stats.diversificationLevel}
-              scoreLevel={stats.scoreLevel}
-              testID="portfolio-summary-stats"
-              diversificationTestID="portfolio-summary-stat-diversification"
-              riskLevelTestID="portfolio-summary-stat-risk-level"
-            />
-          </Box>
+          <PortfolioPreferencesCard isSwissBias={swissBias} />
 
           <Box>
             <ListRowTitle
@@ -79,13 +62,11 @@ const PortfolioSummaryScreen: React.FC = () => {
 
           <Box>
             <ListRowTitle title={t('InvestmentPlan.ListRowTitle.Support.Title')} />
-            <CustomerSupportCardSmall
-              title={t('CustomerSupportCardSmall.Title')}
-              linkLabel={t('CustomerSupportCardSmall.Link')}
+            <CustomerSupportCard
               onPress={() =>
                 Alert.alert(
-                  t('CustomerSupportCardSmall.Title'),
-                  t('CustomerSupportCardSmall.Description'),
+                  t('CustomerSupportCard.Title'),
+                  t('CustomerSupportCard.Description'),
                 )
               }
             />

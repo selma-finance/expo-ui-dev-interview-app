@@ -7,12 +7,13 @@
       "Old": "Old"
     },
     "Continue": "Continue",
+    "Close": "Close",
     "ReadMore": "Read more",
     "SwissBias": "Swiss bias"
   },
-  "CustomerSupportCardSmall": {
-    "Description": "Our crew is happy to help you with any questions about your portfolio.",
-    "Link": "Contact customer support",
+  "CustomerSupportCard": {
+    "ContactLink": "Contact customer support",
+    "Description": "If all this seems a bit intimidating contact our lovely human crew with financial experts for more tips and help.",
     "Title": "Need some further support?"
   },
   "InvestmentPlan": {
@@ -44,6 +45,10 @@
     },
     "Diversification": {
       "Title": "Diversification"
+    },
+    "DiversificationDescription": {
+      "GOOD": "Your investment portfolio is well-diversified across industries, asset classes, and global markets, while maintaining a stronger emphasis on Swiss investments.",
+      "GREAT": "Your investment portfolio is designed to be well-diversified across industries, asset classes, and global markets, reflecting global market allocations."
     },
     "DiversificationLevel": {
       "GOOD": "Good",
@@ -77,6 +82,14 @@
       }
     },
     "RiskLevel": {
+      "Description": {
+        "OPTION_1_STABILITY": "Your investment strategy prioritises stability, aiming to protect your capital and deliver steady income.",
+        "OPTION_2_CAUTIOUS_GROWTH": "Your investment strategy aims for long-term growth, embracing some volatility in exchange for the potential of higher returns.",
+        "OPTION_3_WELL_BALANCED": "Your investment strategy strikes a balance between growth and stability, designed to achieve consistent long-term returns without taking on excessive risk.",
+        "OPTION_4_GROWTH": "Your strategy is focused on long-term growth, aiming to maximise returns by embracing a higher level of risk.",
+        "OPTION_5_STRONG_GROWTH": "Your strategy is focused on long-term growth, aiming to maximise returns by embracing a higher level of risk.",
+        "OPTION_6_FULL_GROWTH": "Your strategy is fully focused on long-term growth, aiming to maximise returns by embracing a higher level of risk."
+      },
       "Header": {
         "OPTION_1_STABILITY": "Stability",
         "OPTION_2_CAUTIOUS_GROWTH": "Cautious growth",
