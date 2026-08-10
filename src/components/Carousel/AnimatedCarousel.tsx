@@ -137,7 +137,7 @@ function AnimatedCarousel<T>({
       style={{ width: '100%', height, flexGrow: 0, flexShrink: 0 }}
       contentContainerStyle={{
         alignItems: 'flex-start',
-        ...(padItems && data.length > 1 ? { paddingRight: itemPaddingLeft } : undefined),
+        ...(padItems && data.length > 1 && { paddingRight: itemPaddingLeft }),
       }}
     >
       {data.map((item, index) => {
