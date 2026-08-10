@@ -1,6 +1,6 @@
-# Welcome to your Expo app 👋
+# Selma Portfolio Customisation
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+An [Expo](https://expo.dev) Managed demo app for a three-step portfolio customisation flow: pick a portfolio, set preferences (including Swiss bias), then review allocation changes, costs, and risk before confirming.
 
 ## Get started
 
