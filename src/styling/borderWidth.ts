@@ -3,4 +3,4 @@ export default {
   xs: 1,
   s: 2,
   m: 3,
-}
+};

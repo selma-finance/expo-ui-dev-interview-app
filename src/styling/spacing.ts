@@ -10,4 +10,4 @@ export default {
   offsetM: 32,
   offsetXl: 72,
   viewSpacing: 128,
-}
+};
