@@ -13,6 +13,10 @@ concurrency:
 jobs:
   quality:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        task: [prettier, eslint, type-check, jest]
     steps:
       - uses: actions/checkout@v4
 
@@ -24,14 +28,11 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
-      - name: Prettier
-        run: yarn lint:prettier
-
-      - name: ESLint
-        run: yarn lint
-
-      - name: TypeScript
-        run: yarn lint:ts
-
-      - name: Jest
-        run: yarn test --ci
+      - name: Run ${{ matrix.task }}
+        run: |
+          case "${{ matrix.task }}" in
+            prettier) yarn lint:prettier ;;
+            eslint) yarn lint ;;
+            type-check) yarn lint:ts ;;
+            jest) yarn test --ci ;;
+          esac
