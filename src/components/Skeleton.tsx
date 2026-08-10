@@ -1,29 +1,34 @@
-import React from "react"
-import { DimensionValue } from "react-native"
-import Box from "./Box"
+import React from 'react';
+import { DimensionValue } from 'react-native';
+import Box from './Box';
 
-type BoxProps = React.ComponentProps<typeof Box>
+type BoxProps = React.ComponentProps<typeof Box>;
 
 interface SkeletonProps extends BoxProps {
-  variant?: "text" | "rect" | "circle" | "carousel"
-  height?: number
-  width?: DimensionValue
+  variant?: 'text' | 'rect' | 'circle' | 'carousel';
+  height?: number;
+  width?: DimensionValue;
 }
 
-const Skeleton: React.FC<SkeletonProps> = ({ height = 18, variant = "rect", width = "100%", ...otherProps }) => {
+const Skeleton: React.FC<SkeletonProps> = ({
+  height = 18,
+  variant = 'rect',
+  width = '100%',
+  ...otherProps
+}) => {
   const borderRadiusMap = {
-    text: { borderRadius: "s" },
-    rect: { borderRadius: "l" },
-    circle: { borderRadius: "round" },
+    text: { borderRadius: 's' },
+    rect: { borderRadius: 'l' },
+    circle: { borderRadius: 'round' },
     carousel: {
-      borderTopLeftRadius: "l",
-      borderBottomLeftRadius: "l",
+      borderTopLeftRadius: 'l',
+      borderBottomLeftRadius: 'l',
     },
-  } as const
+  } as const;
 
-  const borderRadius = borderRadiusMap[variant]
+  const borderRadius = borderRadiusMap[variant];
 
-  const finalWidth = variant === "circle" ? height : width
+  const finalWidth = variant === 'circle' ? height : width;
 
   return (
     <Box
@@ -34,7 +39,7 @@ const Skeleton: React.FC<SkeletonProps> = ({ height = 18, variant = "rect", widt
       {...borderRadius}
       {...otherProps}
     />
-  )
-}
+  );
+};
 
-export default Skeleton
+export default Skeleton;

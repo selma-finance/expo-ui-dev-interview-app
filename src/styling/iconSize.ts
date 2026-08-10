@@ -3,4 +3,4 @@ export default {
   small: 20,
   medium: 24,
   large: 32,
-}
+};

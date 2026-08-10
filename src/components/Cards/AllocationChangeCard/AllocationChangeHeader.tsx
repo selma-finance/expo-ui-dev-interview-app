@@ -8,10 +8,7 @@ interface AllocationChangeHeaderProps {
   detail: string;
 }
 
-const AllocationChangeHeader: React.FC<AllocationChangeHeaderProps> = ({
-  title,
-  detail,
-}) => (
+const AllocationChangeHeader: React.FC<AllocationChangeHeaderProps> = ({ title, detail }) => (
   <Box flexDirection="row" gap="s" alignItems="center">
     <Box flex={1}>
       <Text

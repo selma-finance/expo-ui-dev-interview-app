@@ -42,17 +42,11 @@ export const CLASSIC_BASELINE_ALLOCATIONS: readonly AllocationEntry[] = [
 ];
 
 const BASELINE_PERCENTAGE_BY_CATEGORY = Object.fromEntries(
-  CLASSIC_BASELINE_ALLOCATIONS.map((entry) => [
-    entry.portfolioCategoryKey,
-    entry.percentage,
-  ]),
+  CLASSIC_BASELINE_ALLOCATIONS.map((entry) => [entry.portfolioCategoryKey, entry.percentage]),
 ) as Record<PortfolioCategoryKey, number>;
 
 const BASELINE_MAX_BY_CATEGORY = Object.fromEntries(
-  CLASSIC_BASELINE_ALLOCATIONS.map((entry) => [
-    entry.portfolioCategoryKey,
-    entry.max,
-  ]),
+  CLASSIC_BASELINE_ALLOCATIONS.map((entry) => [entry.portfolioCategoryKey, entry.max]),
 ) as Record<PortfolioCategoryKey, number>;
 
 const getBaselinePercentage = (category: PortfolioCategoryKey): number =>
@@ -62,9 +56,7 @@ const buildChanges = (
   newAllocations: AllocationEntry[],
   t: (key: string) => string,
 ): AllocationChangeCategoryProps[] => {
-  const newByCategory = new Map(
-    newAllocations.map((entry) => [entry.portfolioCategoryKey, entry]),
-  );
+  const newByCategory = new Map(newAllocations.map((entry) => [entry.portfolioCategoryKey, entry]));
 
   const categories = new Set<PortfolioCategoryKey>([
     ...CLASSIC_BASELINE_ALLOCATIONS.map((entry) => entry.portfolioCategoryKey),
@@ -96,9 +88,7 @@ const buildChanges = (
       };
     })
     .sort(
-      (a, b) =>
-        (b.visualisations[0]?.percentage ?? 0) -
-        (a.visualisations[0]?.percentage ?? 0),
+      (a, b) => (b.visualisations[0]?.percentage ?? 0) - (a.visualisations[0]?.percentage ?? 0),
     );
 };
 
@@ -168,10 +158,7 @@ const incomeAllocations = (hasSwissBias: boolean): AllocationEntry[] => {
   ];
 };
 
-const getNewAllocations = (
-  theme: BasePortfolioEnum,
-  hasSwissBias: boolean,
-): AllocationEntry[] => {
+const getNewAllocations = (theme: BasePortfolioEnum, hasSwissBias: boolean): AllocationEntry[] => {
   switch (theme) {
     case 'INCOME':
       return incomeAllocations(hasSwissBias);

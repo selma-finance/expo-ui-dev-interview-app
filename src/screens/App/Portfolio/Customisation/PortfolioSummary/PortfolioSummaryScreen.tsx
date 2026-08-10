@@ -17,10 +17,8 @@ import { PortfolioPreferencesCard } from 'src/screens/shared/PortfolioCards/Port
 
 const PortfolioSummaryScreen: React.FC = () => {
   const { t } = useTranslation();
-  const navigation =
-    useNavigation<StackNavigationProp<PortfolioCustomisationStackParamList>>();
-  const route =
-    useRoute<RouteProp<PortfolioCustomisationStackParamList, 'PortfolioSummary'>>();
+  const navigation = useNavigation<StackNavigationProp<PortfolioCustomisationStackParamList>>();
+  const route = useRoute<RouteProp<PortfolioCustomisationStackParamList, 'PortfolioSummary'>>();
 
   const { theme, swissBias } = route.params;
 
@@ -64,10 +62,7 @@ const PortfolioSummaryScreen: React.FC = () => {
             <ListRowTitle title={t('InvestmentPlan.ListRowTitle.Support.Title')} />
             <CustomerSupportCard
               onPress={() =>
-                Alert.alert(
-                  t('CustomerSupportCard.Title'),
-                  t('CustomerSupportCard.Description'),
-                )
+                Alert.alert(t('CustomerSupportCard.Title'), t('CustomerSupportCard.Description'))
               }
             />
           </Box>

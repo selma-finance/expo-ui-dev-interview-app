@@ -10,7 +10,7 @@ interface BottomDotsProps {
 const BottomDots: React.FC<BottomDotsProps> = ({ numberOfItems, currentIndex }) => {
   return (
     <Box testID="bottom-dots" style={{ flexDirection: 'row', justifyContent: 'center' }}>
-      {[...Array.from({ length: numberOfItems }).keys()].map(index => (
+      {[...Array.from({ length: numberOfItems }).keys()].map((index) => (
         <Box
           key={index}
           width={24}

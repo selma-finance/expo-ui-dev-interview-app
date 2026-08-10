@@ -9,11 +9,7 @@ export interface PortfolioValueBoxProps extends Testable {
   value: string;
 }
 
-const PortfolioValueBox: React.FC<PortfolioValueBoxProps> = ({
-  label,
-  value,
-  testID,
-}) => (
+const PortfolioValueBox: React.FC<PortfolioValueBoxProps> = ({ label, value, testID }) => (
   <Box testID={testID} flexDirection="column" gap="xxs">
     <Text variant="tertiary" color="textTertiary" fontWeight="600">
       {label}

@@ -16,12 +16,7 @@ const DEFAULT_SLOT_BOX_PROPS = {
   gap: 's',
 } as const satisfies BoxPropsWithoutChildren;
 
-const BaseCard: React.FC<BaseCardProps> = ({
-  children,
-  testID,
-  cardBoxProps,
-  slotBoxProps,
-}) => {
+const BaseCard: React.FC<BaseCardProps> = ({ children, testID, cardBoxProps, slotBoxProps }) => {
   const mergedSlotBoxProps = { ...DEFAULT_SLOT_BOX_PROPS, ...slotBoxProps };
 
   return (

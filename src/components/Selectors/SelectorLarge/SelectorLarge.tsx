@@ -59,7 +59,13 @@ export const SelectorLarge: React.FC<SelectorLargeProps> = ({
           <Checkbox testID={`${testID}.checkbox`} isActive={isActive} disabled={disabled} />
           <Box flex={1} gap="xs">
             <Box flexDirection="row" justifyContent="space-between" alignItems="center">
-              <Text variant="primary" color="textPrimary" fontWeight="600" flexShrink={1} numberOfLines={1}>
+              <Text
+                variant="primary"
+                color="textPrimary"
+                fontWeight="600"
+                flexShrink={1}
+                numberOfLines={1}
+              >
                 {title}
               </Text>
               {tag && <Tag label={tag} />}

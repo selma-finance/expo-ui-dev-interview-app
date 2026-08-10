@@ -17,18 +17,14 @@ const categoryColorMap: Record<PortfolioCategoryKey, Colors> = {
   swiss_equity: 'portfolioSwissEquity',
 };
 
-const getPortfolioColor = (
-  portfolioCategory: PortfolioCategoryKey | undefined,
-): Colors => {
+const getPortfolioColor = (portfolioCategory: PortfolioCategoryKey | undefined): Colors => {
   if (!portfolioCategory) {
     return 'portfolioOther';
   }
   return categoryColorMap[portfolioCategory] ?? 'portfolioOther';
 };
 
-export function useGetPortfolioColor(): (
-  portfolioCategory?: PortfolioCategoryKey,
-) => Colors {
+export function useGetPortfolioColor(): (portfolioCategory?: PortfolioCategoryKey) => Colors {
   useTheme<Theme>();
   return getPortfolioColor;
 }

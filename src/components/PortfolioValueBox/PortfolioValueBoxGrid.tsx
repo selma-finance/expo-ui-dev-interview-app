@@ -19,9 +19,7 @@ const chunkPairs = <T,>(items: T[]): T[][] => {
 const flattenChildren = (children: React.ReactNode): React.ReactElement[] =>
   React.Children.toArray(children).flatMap((child) => {
     if (React.isValidElement(child) && child.type === React.Fragment) {
-      return flattenChildren(
-        (child.props as { children?: React.ReactNode }).children,
-      );
+      return flattenChildren((child.props as { children?: React.ReactNode }).children);
     }
     return React.isValidElement(child) ? [child] : [];
   });

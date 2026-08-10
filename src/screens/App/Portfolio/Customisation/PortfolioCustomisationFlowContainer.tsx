@@ -1,14 +1,11 @@
-import React from "react";
-import { useTranslation } from "react-i18next";
-import {
-  SafeAreaView,
-  useSafeAreaInsets,
-} from "react-native-safe-area-context";
+import React from 'react';
+import { useTranslation } from 'react-i18next';
+import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import BottomActionContainer from "src/components/BottomContainers/BottomActionContainer/BottomActionContainer";
-import Box from "src/components/Box";
-import ScreenHeaderTitle from "src/components/ScreenHeaderTitle";
-import Text from "src/components/Text/Text";
+import BottomActionContainer from 'src/components/BottomContainers/BottomActionContainer/BottomActionContainer';
+import Box from 'src/components/Box';
+import ScreenHeaderTitle from 'src/components/ScreenHeaderTitle';
+import Text from 'src/components/Text/Text';
 
 interface PortfolioCustomisationFlowContainerProps {
   title: string;
@@ -30,17 +27,17 @@ export const PortfolioCustomisationFlowContainer: React.FC<
 
   return (
     <Box flex={1} backgroundColor="backgroundBase">
-      <SafeAreaView edges={["top", "left", "right"]} style={{ flex: 1 }}>
-          <ScreenHeaderTitle
-            flex={0}
-            isShownBackBtn={showBackButton}
-            label={title}
-            onBackPress={onBackPress}
-          />
+      <SafeAreaView edges={['top', 'left', 'right']} style={{ flex: 1 }}>
+        <ScreenHeaderTitle
+          flex={0}
+          isShownBackBtn={showBackButton}
+          label={title}
+          onBackPress={onBackPress}
+        />
 
-          <Box flex={1} style={{ minHeight: 0 }}>
-            {children}
-          </Box>
+        <Box flex={1} style={{ minHeight: 0 }}>
+          {children}
+        </Box>
       </SafeAreaView>
 
       <Box
@@ -59,7 +56,7 @@ export const PortfolioCustomisationFlowContainer: React.FC<
         {CTA && (
           <BottomActionContainer
             cta={{
-              label: CTA.label ?? t("Commons.Continue"),
+              label: CTA.label ?? t('Commons.Continue'),
               onPress: CTA.onPress,
               disabled: CTA.disabled,
             }}

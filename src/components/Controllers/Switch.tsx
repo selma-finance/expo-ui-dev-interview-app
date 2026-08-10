@@ -1,10 +1,10 @@
-import React from "react"
-import { Platform, Switch as RNSwitch } from "react-native"
-import { useTheme } from "@shopify/restyle"
-import { Theme } from "src/styling/restyle/defaultTheme"
+import React from 'react';
+import { Platform, Switch as RNSwitch } from 'react-native';
+import { useTheme } from '@shopify/restyle';
+import { Theme } from 'src/styling/restyle/defaultTheme';
 
 const Switch: React.FC<React.ComponentProps<typeof RNSwitch>> = ({ disabled, value, ...props }) => {
-  const { colors } = useTheme<Theme>()
+  const { colors } = useTheme<Theme>();
   return (
     <RNSwitch
       {...props}
@@ -23,9 +23,9 @@ const Switch: React.FC<React.ComponentProps<typeof RNSwitch>> = ({ disabled, val
           ? { true: colors.backgroundDisabled, false: colors.backgroundDisabled }
           : { true: colors.backgroundActive }
       }
-      {...(Platform.OS === "android" ? { thumbColor: colors.backgroundSurface } : {})}
+      {...(Platform.OS === 'android' ? { thumbColor: colors.backgroundSurface } : {})}
     />
-  )
-}
+  );
+};
 
-export default Switch
+export default Switch;

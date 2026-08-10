@@ -32,7 +32,9 @@ const CustomerSupportCard: React.FC<CustomerSupportCardProps> = ({
     <PressableButton onPress={onPress} accessibilityRole="button">
       <Box
         backgroundColor={
-          backgroundStyle === CustomerSupportCardBackgroundStyle.SURFACE ? 'backgroundSurface' : undefined
+          backgroundStyle === CustomerSupportCardBackgroundStyle.SURFACE
+            ? 'backgroundSurface'
+            : undefined
         }
         borderColor={hasBorder ? 'borderDefault' : undefined}
         borderWidth={hasBorder ? borderWidth.s : undefined}

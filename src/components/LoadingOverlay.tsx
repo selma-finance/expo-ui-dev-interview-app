@@ -1,26 +1,26 @@
-import React from "react"
+import React from 'react';
 
-import Box from "./Box"
-import { LoadingSpinner } from "src/components/Loaders/LoadingSpinner"
+import Box from './Box';
+import { LoadingSpinner } from 'src/components/Loaders/LoadingSpinner';
 
 interface LoadingOverlayProps {
-  visible?: boolean
+  visible?: boolean;
 }
 
 export const LoadingOverlay: React.FC<LoadingOverlayProps> = ({ visible }) => {
   if (!visible) {
-    return null
+    return null;
   }
 
   return (
     <Box
       style={{
-        position: "absolute",
+        position: 'absolute',
         top: 0,
         right: 0,
         bottom: 0,
         left: 0,
-        backgroundColor: "rgba(0,0,0,0.25)",
+        backgroundColor: 'rgba(0,0,0,0.25)',
         zIndex: 100,
       }}
       justifyContent="center"
@@ -29,5 +29,5 @@ export const LoadingOverlay: React.FC<LoadingOverlayProps> = ({ visible }) => {
     >
       <LoadingSpinner />
     </Box>
-  )
-}
+  );
+};

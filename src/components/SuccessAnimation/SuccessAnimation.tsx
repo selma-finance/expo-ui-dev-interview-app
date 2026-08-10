@@ -1,16 +1,20 @@
-import LottieView from "lottie-react-native"
-import React from "react"
+import LottieView from 'lottie-react-native';
+import React from 'react';
 
-import Box from "../Box"
-import Text from "../Text/Text"
+import Box from '../Box';
+import Text from '../Text/Text';
 
 interface SuccessAnimationProps {
-  title: string
-  onAnimationFinish?: () => void
-  testID?: string
+  title: string;
+  onAnimationFinish?: () => void;
+  testID?: string;
 }
 
-const SuccessAnimation: React.FC<SuccessAnimationProps> = ({ title, onAnimationFinish, testID }) => {
+const SuccessAnimation: React.FC<SuccessAnimationProps> = ({
+  title,
+  onAnimationFinish,
+  testID,
+}) => {
   return (
     <Box testID={testID} alignContent="center" marginBottom="l">
       <Box marginHorizontal="s" marginTop="s">
@@ -24,18 +28,18 @@ const SuccessAnimation: React.FC<SuccessAnimationProps> = ({ title, onAnimationF
         style={{
           width: 200,
           height: 200,
-          alignSelf: "center",
+          alignSelf: 'center',
         }}
-        source={require("../../../assets/animations/success.json")}
+        source={require('../../../assets/animations/success.json')}
         // Lottie fires onAnimationFinish both for completion and cancellation (e.g., closing/unmounting the sheet); only react to a full run
-        onAnimationFinish={isCancelled => {
+        onAnimationFinish={(isCancelled) => {
           if (!isCancelled) {
-            onAnimationFinish?.()
+            onAnimationFinish?.();
           }
         }}
       />
     </Box>
-  )
-}
+  );
+};
 
-export default SuccessAnimation
+export default SuccessAnimation;

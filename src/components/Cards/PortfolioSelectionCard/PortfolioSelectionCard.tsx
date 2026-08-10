@@ -76,7 +76,12 @@ const PortfolioSelectionCard: React.FC<PortfolioSelectionCardProps> = ({
         accessibilityLabel={title}
         accessibilityState={accessibilityRole === 'radio' ? { selected: isSelected } : undefined}
       >
-        <Box paddingVertical="s" backgroundColor={backgroundColor} alignItems="center" justifyContent="center">
+        <Box
+          paddingVertical="s"
+          backgroundColor={backgroundColor}
+          alignItems="center"
+          justifyContent="center"
+        >
           {illustrationTag && (
             <Box position="absolute" top={spacing.offsetXs} left={spacing.offsetXs}>
               <Tag testID={`${testID}.illustration-tag`} label={illustrationTag} inverted={true} />
@@ -106,7 +111,12 @@ const PortfolioSelectionCard: React.FC<PortfolioSelectionCardProps> = ({
               {description}
             </Text>
             {readMore && (
-              <Link testID={`${testID}.read-more`} label={readMore.label} onPress={readMore.onPress} hitSlop={8} />
+              <Link
+                testID={`${testID}.read-more`}
+                label={readMore.label}
+                onPress={readMore.onPress}
+                hitSlop={8}
+              />
             )}
           </Box>
         </Box>

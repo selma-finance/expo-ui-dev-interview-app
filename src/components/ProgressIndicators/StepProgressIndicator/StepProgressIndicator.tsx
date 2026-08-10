@@ -21,7 +21,10 @@ const StepProgressIndicatorStep: React.FC<StepProgressIndicatorStepProps> = ({ i
   />
 );
 
-const StepProgressIndicator: React.FC<StepProgressIndicatorProps> = ({ currentStep, totalSteps }) => (
+const StepProgressIndicator: React.FC<StepProgressIndicatorProps> = ({
+  currentStep,
+  totalSteps,
+}) => (
   <Box flex={1} flexDirection="row" gap="xxs">
     {Array.from({ length: totalSteps }, (_, stepIndex) => (
       <StepProgressIndicatorStep key={stepIndex} isActive={stepIndex < currentStep} />

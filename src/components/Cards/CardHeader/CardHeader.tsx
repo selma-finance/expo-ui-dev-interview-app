@@ -32,7 +32,13 @@ const CardHeader: React.FC<CardHeaderProps> = ({
       {icon && tag && <Tag testID={`${testID}-tag`} label={tag} />}
     </Box>
     {link && (
-      <Link testID={`${testID}-link`} label={link} onPress={onPressLink} disabled={isLinkDisabled} hitSlop={20} />
+      <Link
+        testID={`${testID}-link`}
+        label={link}
+        onPress={onPressLink}
+        disabled={isLinkDisabled}
+        hitSlop={20}
+      />
     )}
     {!icon && tag && <Tag testID={`${testID}-tag`} label={tag} />}
     {icon}

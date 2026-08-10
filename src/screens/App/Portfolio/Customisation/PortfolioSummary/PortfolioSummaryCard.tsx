@@ -52,10 +52,7 @@ const PortfolioSummaryCard: React.FC<PortfolioSummaryCardProps> = ({
   }, [diversificationData.levelDescription, t]);
 
   const showRiskLevelInfo = useCallback(() => {
-    Alert.alert(
-      t('PortfolioCustomisation.RiskLevel.Title'),
-      riskScoreLevelData.levelDescription,
-    );
+    Alert.alert(t('PortfolioCustomisation.RiskLevel.Title'), riskScoreLevelData.levelDescription);
   }, [riskScoreLevelData.levelDescription, t]);
 
   const pieChartProps: PieChartProps = useMemo(() => {

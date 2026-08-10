@@ -10,11 +10,7 @@ interface ListRowTitleProps {
   onLinkPress?: () => void;
 }
 
-const ListRowTitle: React.FC<ListRowTitleProps> = ({
-  title,
-  linkLabel,
-  onLinkPress,
-}) => (
+const ListRowTitle: React.FC<ListRowTitleProps> = ({ title, linkLabel, onLinkPress }) => (
   <Box
     paddingHorizontal="s"
     paddingVertical="xs"

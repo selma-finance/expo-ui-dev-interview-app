@@ -2,10 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import StatsCard from 'src/components/Cards/StatsCard/StatsCard';
-import {
-  AllocationDiversification,
-  RiskScoreLevel,
-} from 'src/types/schemaTypes';
+import { AllocationDiversification, RiskScoreLevel } from 'src/types/schemaTypes';
 
 interface PortfolioStatsCardProps {
   diversificationLevel: AllocationDiversification;

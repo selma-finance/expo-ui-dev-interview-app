@@ -54,12 +54,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
       style={style}
     >
       <Animated.View
-        style={[
-          styles.progress,
-          { width: `${percent * 100}%` },
-          animatedStyle,
-          progressStyle,
-        ]}
+        style={[styles.progress, { width: `${percent * 100}%` }, animatedStyle, progressStyle]}
       />
     </Box>
   );

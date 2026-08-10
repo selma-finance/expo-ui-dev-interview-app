@@ -1,24 +1,24 @@
 /* eslint-disable unicorn/consistent-boolean-name -- `value` matches React Native Switch API */
-import React from "react"
-import { Pressable } from "react-native"
+import React from 'react';
+import { Pressable } from 'react-native';
 
-import Box from "src/components/Box"
-import Switch from "src/components/Controllers/Switch"
-import Icon from "src/components/Icon"
-import Tag from "src/components/Tag"
-import Text from "src/components/Text/Text"
+import Box from 'src/components/Box';
+import Switch from 'src/components/Controllers/Switch';
+import Icon from 'src/components/Icon';
+import Tag from 'src/components/Tag';
+import Text from 'src/components/Text/Text';
 
 export interface PortfolioCustomisationListItemProps {
-  title: string
-  description: string
-  value: boolean
-  onValueChange: (value: boolean) => void
-  disabled?: boolean
-  activeTag?: string
-  onInfoPress?: () => void
-  toggleTestID: string
-  infoTestID?: string
-  tagTestID?: string
+  title: string;
+  description: string;
+  value: boolean;
+  onValueChange: (value: boolean) => void;
+  disabled?: boolean;
+  activeTag?: string;
+  onInfoPress?: () => void;
+  toggleTestID: string;
+  infoTestID?: string;
+  tagTestID?: string;
 }
 
 const PortfolioCustomisationListItem: React.FC<PortfolioCustomisationListItemProps> = ({
@@ -40,7 +40,12 @@ const PortfolioCustomisationListItem: React.FC<PortfolioCustomisationListItemPro
           {title}
         </Text>
         {onInfoPress && infoTestID && (
-          <Pressable testID={infoTestID} onPress={onInfoPress} hitSlop={24} accessibilityRole="button">
+          <Pressable
+            testID={infoTestID}
+            onPress={onInfoPress}
+            hitSlop={24}
+            accessibilityRole="button"
+          >
             <Icon name="information-circle-outline" size="medium" color="iconSubtle" />
           </Pressable>
         )}
@@ -64,6 +69,6 @@ const PortfolioCustomisationListItem: React.FC<PortfolioCustomisationListItemPro
       )}
     </Box>
   </Box>
-)
+);
 
-export default PortfolioCustomisationListItem
+export default PortfolioCustomisationListItem;

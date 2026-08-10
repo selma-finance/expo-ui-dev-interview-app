@@ -1,36 +1,42 @@
-import Ionicons from "@expo/vector-icons/Ionicons"
-import { BottomSheetTextInput, useBottomSheetInternal } from "@gorhom/bottom-sheet"
-import { useTheme } from "@shopify/restyle"
-import React, { useState } from "react"
-import { StyleSheet, TextInput, TextInputEndEditingEvent, TextInputProps, ViewStyle } from "react-native"
-import borderWidth from "src/styling/borderWidth"
-import { fontFamily, fontSize } from "src/styling/font"
-import { Theme } from "src/styling/restyle/defaultTheme"
+import Ionicons from '@expo/vector-icons/Ionicons';
+import { BottomSheetTextInput, useBottomSheetInternal } from '@gorhom/bottom-sheet';
+import { useTheme } from '@shopify/restyle';
+import React, { useState } from 'react';
+import {
+  StyleSheet,
+  TextInput,
+  TextInputEndEditingEvent,
+  TextInputProps,
+  ViewStyle,
+} from 'react-native';
+import borderWidth from 'src/styling/borderWidth';
+import { fontFamily, fontSize } from 'src/styling/font';
+import { Theme } from 'src/styling/restyle/defaultTheme';
 
-import useBorderBottomColor from "./useBorderBottomColor"
-import Box from "../Box"
-import Text from "../Text/Text"
+import useBorderBottomColor from './useBorderBottomColor';
+import Box from '../Box';
+import Text from '../Text/Text';
 
 export interface InputProps {
-  label?: string
-  placeholder?: string
-  style?: ViewStyle
-  fieldStyle?: ViewStyle
-  password?: boolean
-  textInputProps?: TextInputProps
-  onFocus?: () => void
-  value?: string
-  onBlur?: () => void
-  onPress?: () => void
-  errorMessage?: string
-  isError?: boolean
-  helpMessage?: string
-  onChangeText?: (text: string) => void
-  onEndEditing?: (event: TextInputEndEditingEvent) => void
-  testID?: string
-  rightElement?: React.ReactElement
-  leftElement?: React.ReactElement
-  autoFocus?: boolean
+  label?: string;
+  placeholder?: string;
+  style?: ViewStyle;
+  fieldStyle?: ViewStyle;
+  password?: boolean;
+  textInputProps?: TextInputProps;
+  onFocus?: () => void;
+  value?: string;
+  onBlur?: () => void;
+  onPress?: () => void;
+  errorMessage?: string;
+  isError?: boolean;
+  helpMessage?: string;
+  onChangeText?: (text: string) => void;
+  onEndEditing?: (event: TextInputEndEditingEvent) => void;
+  testID?: string;
+  rightElement?: React.ReactElement;
+  leftElement?: React.ReactElement;
+  autoFocus?: boolean;
 }
 
 const Input = ({
@@ -55,7 +61,7 @@ const Input = ({
   autoFocus,
   ref: forwardedRef,
 }: InputProps & { ref?: React.Ref<TextInput> }) => {
-  const { colors } = useTheme<Theme>()
+  const { colors } = useTheme<Theme>();
 
   // When this input lives inside a @gorhom/bottom-sheet, render its
   // BottomSheetTextInput instead of a plain RN TextInput. The sheet only tracks
@@ -66,23 +72,25 @@ const Input = ({
   // useBottomSheetInternal(true) returns null and we keep the plain TextInput.
   // BottomSheetTextInput accepts the same props and forwards its ref to a
   // TextInput-compatible instance, so the cast keeps the call site RN-typed.
-  const isInsideBottomSheet = useBottomSheetInternal(true) !== null
-  const TextInputComponent = (isInsideBottomSheet ? BottomSheetTextInput : TextInput) as typeof TextInput
+  const isInsideBottomSheet = useBottomSheetInternal(true) !== null;
+  const TextInputComponent = (
+    isInsideBottomSheet ? BottomSheetTextInput : TextInput
+  ) as typeof TextInput;
 
-  const [isPassword, setIsPassword] = useState(password)
-  const [isFocus, setIsFocus] = useState(false)
+  const [isPassword, setIsPassword] = useState(password);
+  const [isFocus, setIsFocus] = useState(false);
 
   const onFocusHandler = () => {
-    setIsFocus(true)
-    onFocus?.()
-  }
+    setIsFocus(true);
+    onFocus?.();
+  };
 
   const onBlurHandler = () => {
-    setIsFocus(false)
-    onBlur?.()
-  }
+    setIsFocus(false);
+    onBlur?.();
+  };
 
-  const borderBottomColor = useBorderBottomColor(!!(isError && errorMessage), isFocus)
+  const borderBottomColor = useBorderBottomColor(!!(isError && errorMessage), isFocus);
 
   return (
     <Box style={style}>
@@ -125,7 +133,7 @@ const Input = ({
           <Ionicons
             testID={`${testID}.secure-toggle`}
             onPress={() => setIsPassword(!isPassword)}
-            name={isPassword ? "eye" : "eye-off"}
+            name={isPassword ? 'eye' : 'eye-off'}
             size={fontSize.IconSize}
             color={isFocus ? colors.iconActive : colors.iconInactive}
           />
@@ -146,8 +154,8 @@ const Input = ({
         )}
       </Box>
     </Box>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   input: {
@@ -158,8 +166,8 @@ const styles = StyleSheet.create({
     paddingTop: 0,
     paddingBottom: 0,
   },
-})
+});
 
-Input.displayName = "Input"
+Input.displayName = 'Input';
 
-export default Input
+export default Input;

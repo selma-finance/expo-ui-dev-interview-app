@@ -33,7 +33,12 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({
   descriptionLinkProps,
   showFullDescription,
 }) => (
-  <Box backgroundColor="backgroundSurface" borderRadius="l" paddingVertical="m" paddingHorizontal="s">
+  <Box
+    backgroundColor="backgroundSurface"
+    borderRadius="l"
+    paddingVertical="m"
+    paddingHorizontal="s"
+  >
     <Box alignItems="center" gap="m">
       <Box alignSelf="stretch" gap="xs">
         <CardHeader testID="portfolio-card-header" {...cardHeaderProps} />

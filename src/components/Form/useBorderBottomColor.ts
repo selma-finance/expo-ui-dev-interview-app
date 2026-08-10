@@ -1,12 +1,12 @@
-import { useTheme } from "@shopify/restyle"
-import { Theme } from "src/styling/restyle/defaultTheme"
+import { useTheme } from '@shopify/restyle';
+import { Theme } from 'src/styling/restyle/defaultTheme';
 
 const useBorderBottomColor = (hasError: boolean, isFocused: boolean) => {
-  const { colors } = useTheme<Theme>()
+  const { colors } = useTheme<Theme>();
   if (hasError) {
-    return colors.borderAlert
+    return colors.borderAlert;
   }
-  return isFocused ? colors.borderFocused : colors.borderDefault
-}
+  return isFocused ? colors.borderFocused : colors.borderDefault;
+};
 
-export default useBorderBottomColor
+export default useBorderBottomColor;

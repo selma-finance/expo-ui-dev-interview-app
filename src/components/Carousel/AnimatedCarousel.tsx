@@ -101,7 +101,9 @@ function AnimatedCarousel<T>({
       if (!snapOffsets) return Math.round(scrollX / itemWidth);
       return snapOffsets.reduce(
         (closest, offset, index) =>
-          Math.abs(scrollX - offset) < Math.abs(scrollX - (snapOffsets[closest] ?? 0)) ? index : closest,
+          Math.abs(scrollX - offset) < Math.abs(scrollX - (snapOffsets[closest] ?? 0))
+            ? index
+            : closest,
         0,
       );
     },
@@ -142,7 +144,11 @@ function AnimatedCarousel<T>({
     >
       {data.map((item, index) => {
         return (
-          <Box key={keyExtractor(item, index)} style={{ width: itemWidth }} paddingLeft={padItems ? 's' : 'none'}>
+          <Box
+            key={keyExtractor(item, index)}
+            style={{ width: itemWidth }}
+            paddingLeft={padItems ? 's' : 'none'}
+          >
             {renderItem(item, index)}
           </Box>
         );

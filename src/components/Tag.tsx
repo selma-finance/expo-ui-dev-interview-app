@@ -13,8 +13,16 @@ export interface TagProps {
   onPress?: () => void;
 }
 
-const Tag: React.FC<TagProps> = ({ testID, label, withBackground = true, inverted = false, onPress }) => {
-  const backgroundColorProp: { backgroundColor?: ResponsiveValue<keyof Theme['colors'], Theme['breakpoints']> } = {};
+const Tag: React.FC<TagProps> = ({
+  testID,
+  label,
+  withBackground = true,
+  inverted = false,
+  onPress,
+}) => {
+  const backgroundColorProp: {
+    backgroundColor?: ResponsiveValue<keyof Theme['colors'], Theme['breakpoints']>;
+  } = {};
   let textColor: ResponsiveValue<keyof Theme['colors'], Theme['breakpoints']> = 'textActive';
 
   if (withBackground && !inverted) {

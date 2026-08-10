@@ -11,7 +11,9 @@ interface PortfolioPreferencesCardProps {
   isSwissBias: boolean;
 }
 
-export const PortfolioPreferencesCard: React.FC<PortfolioPreferencesCardProps> = ({ isSwissBias }) => {
+export const PortfolioPreferencesCard: React.FC<PortfolioPreferencesCardProps> = ({
+  isSwissBias,
+}) => {
   const { t } = useTranslation();
 
   const showSwissBiasInfo = useCallback(() => {
@@ -23,7 +25,13 @@ export const PortfolioPreferencesCard: React.FC<PortfolioPreferencesCardProps> =
   }
 
   return (
-    <Box backgroundColor="backgroundSurface" paddingHorizontal="s" paddingVertical="m" gap="m" borderRadius="l">
+    <Box
+      backgroundColor="backgroundSurface"
+      paddingHorizontal="s"
+      paddingVertical="m"
+      gap="m"
+      borderRadius="l"
+    >
       <CardHeader title={t('PortfolioCustomisation.Preferences.Title')} />
 
       <Pressable onPress={showSwissBiasInfo}>
