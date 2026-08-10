@@ -42,6 +42,7 @@ const PortfolioSelectionScreen: React.FC = () => {
     <PortfolioCustomisationFlowContainer
       title={t("PortfolioCustomisation.PortfolioSelection.TopBar.Title")}
       disclaimer={t("PortfolioCustomisation.PortfolioSelection.Disclaimer")}
+      showBackButton={false}
       CTA={{ onPress: handleContinue }}
     >
       <Carousel

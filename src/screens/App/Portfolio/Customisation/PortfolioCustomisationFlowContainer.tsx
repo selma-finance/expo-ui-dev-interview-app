@@ -1,7 +1,5 @@
-import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { Alert } from "react-native";
 import {
   SafeAreaView,
   useSafeAreaInsets,
@@ -15,6 +13,7 @@ import Text from "src/components/Text/Text";
 interface PortfolioCustomisationFlowContainerProps {
   title: string;
   disclaimer?: string;
+  showBackButton?: boolean;
   onBackPress?: () => void;
   CTA?: {
     label?: string;
@@ -25,37 +24,18 @@ interface PortfolioCustomisationFlowContainerProps {
 
 export const PortfolioCustomisationFlowContainer: React.FC<
   React.PropsWithChildren<PortfolioCustomisationFlowContainerProps>
-> = ({ title, disclaimer, onBackPress, CTA, children }) => {
+> = ({ title, disclaimer, showBackButton = true, onBackPress, CTA, children }) => {
   const { t } = useTranslation();
-  const navigation = useNavigation();
   const insets = useSafeAreaInsets();
-
-  const handleClose = () => {
-    if (navigation.canGoBack()) {
-      navigation.goBack();
-    }
-  };
-
-  const showCloseDialog = () =>
-    Alert.alert(
-      "Leave portfolio selection?",
-      "Your selection will not be saved.",
-      [
-        { text: "Cancel", style: "cancel" },
-        { text: "Leave", onPress: handleClose },
-      ],
-    );
 
   return (
     <Box flex={1} backgroundColor="backgroundBase">
       <SafeAreaView edges={["top", "left", "right"]} style={{ flex: 1 }}>
           <ScreenHeaderTitle
             flex={0}
-            isShownBackBtn
+            isShownBackBtn={showBackButton}
             label={title}
-            showCloseButton
             onBackPress={onBackPress}
-            onClosePress={showCloseDialog}
           />
 
           <Box flex={1} style={{ minHeight: 0 }}>
